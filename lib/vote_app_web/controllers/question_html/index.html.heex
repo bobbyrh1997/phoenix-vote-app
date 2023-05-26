@@ -1,0 +1,32 @@
+<.header>
+  Listing Questions
+  <:actions>
+    <.link href={~p"/questions/new"}>
+      <.button>New Question</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="questions" rows={@questions} row_click={&JS.navigate(~p"/questions/#{&1}")}>
+  <:col :let={question} label="Body"><%= question.body %></:col>
+  <:col :let={question} label="Answer1"><%= question.answer1 %></:col>
+  <:col :let={question} label="Answer1 count"><%= question.answer1_count %></:col>
+  <:col :let={question} label="Answer2"><%= question.answer2 %></:col>
+  <:col :let={question} label="Answer2 count"><%= question.answer2_count %></:col>
+  <:col :let={question} label="Answer3"><%= question.answer3 %></:col>
+  <:col :let={question} label="Answer3 count"><%= question.answer3_count %></:col>
+  <:col :let={question} label="Answer4"><%= question.answer4 %></:col>
+  <:col :let={question} label="Answer4 count"><%= question.answer4_count %></:col>
+  <:col :let={question} label="Status"><%= question.status %></:col>
+  <:action :let={question}>
+    <div class="sr-only">
+      <.link navigate={~p"/questions/#{question}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/questions/#{question}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={question}>
+    <.link href={~p"/questions/#{question}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

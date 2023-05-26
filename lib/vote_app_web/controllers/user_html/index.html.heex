@@ -1,0 +1,9 @@
+<.header> List of Users </.header>
+
+<table>
+    <%= for user <- @users do %>
+        <tr>
+            <td><%=user.email%> (<%=user.id%>)</td>
+        </tr>
+    <% end %>
+</table>

@@ -1,0 +1,18 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:body]} type="text" label="Body" />
+  <.input field={f[:answer1]} type="text" label="Answer1" />
+  <.input field={f[:answer1_count]} type="number" label="Answer1 count" />
+  <.input field={f[:answer2]} type="text" label="Answer2" />
+  <.input field={f[:answer2_count]} type="number" label="Answer2 count" />
+  <.input field={f[:answer3]} type="text" label="Answer3" />
+  <.input field={f[:answer3_count]} type="number" label="Answer3 count" />
+  <.input field={f[:answer4]} type="text" label="Answer4" />
+  <.input field={f[:answer4_count]} type="number" label="Answer4 count" />
+  <.input field={f[:status]} type="checkbox" label="Status" />
+  <:actions>
+    <.button>Save Question</.button>
+  </:actions>
+</.simple_form>

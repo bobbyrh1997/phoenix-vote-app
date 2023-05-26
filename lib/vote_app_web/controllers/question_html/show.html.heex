@@ -1,0 +1,24 @@
+<.header>
+  Question <%= @question.id %>
+  <:subtitle>This is a question record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/questions/#{@question}/edit"}>
+      <.button>Edit question</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Body"><%= @question.body %></:item>
+  <:item title="Answer1"><%= @question.answer1 %></:item>
+  <:item title="Answer1 count"><%= @question.answer1_count %></:item>
+  <:item title="Answer2"><%= @question.answer2 %></:item>
+  <:item title="Answer2 count"><%= @question.answer2_count %></:item>
+  <:item title="Answer3"><%= @question.answer3 %></:item>
+  <:item title="Answer3 count"><%= @question.answer3_count %></:item>
+  <:item title="Answer4"><%= @question.answer4 %></:item>
+  <:item title="Answer4 count"><%= @question.answer4_count %></:item>
+  <:item title="Status"><%= @question.status %></:item>
+</.list>
+
+<.back navigate={~p"/questions"}>Back to questions</.back>
