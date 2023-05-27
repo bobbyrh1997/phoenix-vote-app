@@ -1,0 +1,10 @@
+<.header> New User </.header>
+
+<.simple_form  :let={f} for={@changeset} id="new_user" action={~p"/users"}>
+    <.input field={f[:email]} type="text" placeholder="Email" />
+    <.input field={f[:name]} type="text" placeholder="Name" />
+
+    <:actions>
+        <.button>Create User</.button>
+     </:actions>
+</.simple_form>
