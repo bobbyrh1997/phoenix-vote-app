@@ -19,4 +19,12 @@ defmodule VoteAppWeb.UserController do
     changeset = Accounts.change_user(%User{})
     render(conn, :new,changeset: changeset)
   end
+
+  def create(conn,%{"user" => user_params}) do
+    {:ok, user} = Accounts.create_user(user_params)
+
+    conn
+    |>put_flash(:info, "#{user.name} created")
+    |>redirect(to: ~p"/users")
+  end
 end
